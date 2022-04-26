@@ -191,4 +191,26 @@ function chars(input) {
 // End of chars()
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
-// Any additional functions can be written below this line 👇. Happy Coding! 😁
+// Any additional functions can be written below this line 👇. Happy Coding! 
+
+function findPersonFamily(person, people){
+
+    let personParents = people.filter(function(el){
+        if (person.parents.includes(el.id)){
+            return true;
+        }
+    })
+//   else if (el.currentSpouse === el.id){
+// 	return true;
+//   }
+//   else{
+// 	return false;
+// }}
+alert(personParents);
+}
+
+
+
+
+
+
