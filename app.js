@@ -194,9 +194,13 @@ function chars(input) {
 // Any additional functions can be written below this line 👇. Happy Coding! 
 
 function findPersonFamily(person, people){
+    
     let parent = findPersonParents(person,people)
     let spouse = findPersonSpouse(person,people)
     let siblings = findpersonsiblings(person,people)
+    let foundFam = [parent,spouse,siblings]
+    let stringify= JSON.stringify(foundFam)
+    alert(stringify)    
 }
 
 
@@ -228,7 +232,7 @@ let personSpouse = people.filter(function(el){
 
 function findpersonsiblings(person,people){
 let personSiblings = people.filter(function(el){
-    if (person.parents === person.parents){
+    if (el.parents === person.parents){
         return true;
     }
     else{
@@ -238,3 +242,22 @@ let personSiblings = people.filter(function(el){
 }
 
 
+
+function findPersonDescendants(person,people){
+    let personChildren = findChildren(person, people);
+    //use loop to call findChildren on each person in personChildren
+
+    }
+
+
+
+function findChildren(person, people){
+    let personChildren = people.filter(function(el){
+        if (el.parents.includes (person.id)){
+            return true;
+        }
+        else{
+            return false;
+    }})    
+       return personChildren
+}
