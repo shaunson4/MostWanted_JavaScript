@@ -194,23 +194,47 @@ function chars(input) {
 // Any additional functions can be written below this line 👇. Happy Coding! 
 
 function findPersonFamily(person, people){
+    let parent = findPersonParents(person,people)
+    let spouse = findPersonSpouse(person,people)
+    let siblings = findpersonsiblings(person,people)
+}
+
+
+function findPersonParents(person, people){
 
     let personParents = people.filter(function(el){
         if (person.parents.includes(el.id)){
             return true;
         }
-    })
-//   else if (el.currentSpouse === el.id){
-// 	return true;
-//   }
-//   else{
-// 	return false;
-// }}
-alert(personParents);
+        else{
+            return false;
+    }})
+
+    return personParents
 }
 
 
+function findPersonSpouse(person, people){
+let personSpouse = people.filter(function(el){
+    if (person.currentSpouse === el.id){
+        return true;
+    }
+    else{
+        return false;
+    }})
+    return personSpouse
+}
 
 
+function findpersonsiblings(person,people){
+let personSiblings = people.filter(function(el){
+    if (person.parents === person.parents){
+        return true;
+    }
+    else{
+        return false;
+}})    
+   return personSiblings
+}
 
 
