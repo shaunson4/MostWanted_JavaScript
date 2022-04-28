@@ -243,10 +243,23 @@ let personSiblings = people.filter(function(el){
 
 
 
+
+
+
+
+
+
+
+
+
 function findPersonDescendants(person,people){
     let personChildren = findChildren(person, people);
     //use loop to call findChildren on each person in personChildren
+    for (let findChildren of personChildren) {
+        let stringify= JSON.stringify(findChildren)
 
+        alert (stringify)
+      }
     }
 
 
