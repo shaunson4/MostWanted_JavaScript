@@ -245,13 +245,6 @@ let personSiblings = people.filter(function(el){
 
 
 
-
-
-
-
-
-
-
 function findPersonDescendants(person,people){
     let personChildren = findChildren(person, people);
     //use loop to call findChildren on each person in personChildren
@@ -274,3 +267,79 @@ function findChildren(person, people){
     }})    
        return personChildren
 }
+
+function searchByGender(people){
+
+    let gender = promptFor ("What is the person's gender?", chars);
+        
+    let foundGender = people.filter(function(person) {
+        if (person.gender === gender ) {
+            return true;
+        
+        }
+    });
+    return foundGender; 
+
+}
+
+//searchByEyeColor
+
+function searchByEyeColor(people){
+
+    let eyecolor = promptFor ("What is the person's eye color?", chars);
+        
+    let foundEyeColor = people.filter(function(person) {
+        if (person.eyecolor === eyecolor ) {
+            return true;
+        }
+    });
+    return foundEyeColor; 
+
+}
+
+function searchByHeight(people){
+
+    let height = promptFor ("What is the person's height?", chars);
+        
+    let foundHeight = people.filter(function(person) {
+        if (person.height === height) {
+            return true;
+        }
+    });
+    return foundHeight; 
+
+}
+function searchByWeight(people){
+
+    let weight = promptFor ("What is the person's weight?", chars);
+        
+    let foundWeight = people.filter(function(person) {
+        if (person.weight === weight) {
+            return true;
+        }
+    });
+    return foundWeight; 
+
+}
+
+
+function searchByTraits (people) {
+    
+    let results = people;
+    results = searchByGender(results);
+    //display the results
+    alert(results) = `${person.gender}\n`;
+}
+    
+    // results = searchByEyeColor(results);
+
+    // results = searchByHeight(results);
+
+    // // results = searchByWeight(results);
+    // alert(
+    //     people
+    //         .filter(function (people) {
+    //             return `${gender}\n`;
+    //         })
+    //     );
+
